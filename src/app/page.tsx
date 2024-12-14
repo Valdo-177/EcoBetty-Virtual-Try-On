@@ -179,7 +179,7 @@ function HomePage() {
 
           <button
             type="submit"
-            className="bg-green-500 w-[max-content] flex items-center p-2 rounded-md gap-3 mt-2 disabled:opacity-50 text-white"
+            className="bg-green-500 mx-auto w-[max-content] flex items-center p-2 rounded-md gap-3 mt-2 disabled:opacity-50 text-white"
             disabled={loading || !modelImage || !garmentImage}
           >
             {loading ? <><LoadingSpinner /> procesando...</> : "¡Visualízate!"}
