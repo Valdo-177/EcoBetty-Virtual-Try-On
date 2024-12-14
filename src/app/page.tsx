@@ -134,8 +134,8 @@ function HomePage() {
 
       {previue ===
         "https://cdn.fashn.ai/b358440b-ae2a-44aa-92aa-0fbac2d172e6-u1/output_0.png" ? (
-        <form onSubmit={handleTryOn} className="bg-zinc-900 p-10 sm:w-[22rem] w-full">
-          <h1 className="text-2xl font-bold text-slate-200 mb-5">Virtual Try-On</h1>
+        <form onSubmit={handleTryOn} className="bg-zinc-900 p-10 sm:w-[25rem] w-full">
+          <h1 className="text-2xl font-bold text-slate-200 mb-5">Descubre tu look con Be-tty</h1>
 
           <div
             className="p-4 border-dashed border-2 border-gray-500 rounded-md mb-4 cursor-pointer"
@@ -182,7 +182,7 @@ function HomePage() {
             className="bg-green-500 w-[max-content] flex items-center p-2 rounded-md gap-3 mt-2 disabled:opacity-50 text-white"
             disabled={loading || !modelImage || !garmentImage}
           >
-            {loading ? <><LoadingSpinner /> Processing...</> : "Submit"}
+            {loading ? <><LoadingSpinner /> procesando...</> : "¡Visualízate!"}
           </button>
         </form>
       ) : (
