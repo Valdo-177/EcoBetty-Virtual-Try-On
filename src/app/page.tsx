@@ -97,9 +97,10 @@ function HomePage() {
 
   useEffect(() => {
     if (result.status === "processing") {
+      console.log('aun na')
       setTimeout(() => {
         getPredictionStatus();
-      }, 15000);
+      }, 5000);
     }
   }, [statusId, result]);
 
@@ -125,7 +126,7 @@ function HomePage() {
   };
 
   return (
-    <div className="bg-zinc-950 h-screen flex flex-col items-center justify-center relative">
+    <div className="bg-[#343E32] text-black h-screen flex flex-col items-center justify-center relative">
       {loadingScreen && (
         <div className="flex items-center justify-center absolute w-full h-full bg-[#000000f2] backdrop-blur-sm text-white z-30">
           <LoadingSpinner />
@@ -134,8 +135,8 @@ function HomePage() {
 
       {previue ===
         "https://cdn.fashn.ai/b358440b-ae2a-44aa-92aa-0fbac2d172e6-u1/output_0.png" ? (
-        <form onSubmit={handleTryOn} className="bg-zinc-900 p-10 sm:w-[25rem] w-full">
-          <h1 className="text-2xl font-bold text-slate-200 mb-5">Descubre tu look con Be-tty</h1>
+        <form onSubmit={handleTryOn} className="bg-white shadow-lg border rounded-lg text-black p-10 sm:w-[25.5rem] w-full">
+          <h1 className="text-2xl font-bold mb-5">Descubre tu look con Be-tty</h1>
 
           <div
             className="p-4 border-dashed border-2 border-gray-500 rounded-md mb-4 cursor-pointer"
@@ -143,7 +144,7 @@ function HomePage() {
             onDrop={(e) => handleDrop(e, setModelImage)}
             onClick={() => document.getElementById("modelImageInput")?.click()}
           >
-            <p className="text-white text-center">
+            <p className="text-black text-center">
               {modelImage
                 ? "Imagen del modelo cargada"
                 : "Arrastre o seleccione la imagen del modelo"}
@@ -163,7 +164,7 @@ function HomePage() {
             onDrop={(e) => handleDrop(e, setGarmentImage)}
             onClick={() => document.getElementById("garmentImageInput")?.click()}
           >
-            <p className="text-white text-center">
+            <p className="text-black text-center">
               {garmentImage
                 ? "Imagen de prenda cargada"
                 : "Arrastre o seleccione la imagen de la prenda"}
@@ -179,7 +180,7 @@ function HomePage() {
 
           <button
             type="submit"
-            className="bg-green-500 mx-auto w-[max-content] flex items-center p-2 rounded-md gap-3 mt-2 disabled:opacity-50 text-white"
+            className="bg-[#343E32] mx-auto w-[max-content] flex items-center p-2 rounded-md gap-3 mt-2 disabled:opacity-50 text-white"
             disabled={loading || !modelImage || !garmentImage}
           >
             {loading ? <><LoadingSpinner /> procesando...</> : "¡Visualízate!"}
